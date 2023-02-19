@@ -1,0 +1,11 @@
+<% if @user_from_db == nil %>
+  <h5><%= t("clear_business_ans1") %></h5>
+<% else %>
+  <% if @user_from_db.position == 'индивидуальный предприниматель' %>
+    <h5><%= t("interp_text") %><%= @user_from_db.user_name %><br>
+    <%= t("inn_text") %><%= @user_from_db.inn %></h5>
+  <% elsif @user_from_db.position == 'юридическое лицо' %>
+    <h5>"<%= @user_from_db.user_name %>"<br>
+    <%= t("inn_text") %><%= @user_from_db.inn %></h5>
+  <% end %>
+<% end %>

@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #6257d7;">
+  <%= link_to payments_info_url, class: "nav-link navbar-brand mb-0 h1" do %>
+    <%= image_tag 'logo_nalog.png', class: 'logo' %>
+  <% end %>
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active" id="links-log">
+      <%= link_to root_path, class: "nav-link navbar-brand mb-0 h1" do %>
+        <button class="btn btn-outline-success my-2 my-sm-0 text-dark" type="submit"><%= t('home') %></button>
+      <% end %>
+    </li>
+    <li class="nav-item active" id="links-log">
+      <%= link_to main_page_url, class: "nav-link navbar-brand mb-0 h1" do %>
+        <button class="btn btn-outline-success my-2 my-sm-0 text-dark" type="submit"><%= t('lk_btn') %></button>
+      <% end %>
+    </li>
+  </ul>
+</nav>
+<div id="payments_container" class="container m-3">
+  <% realties = Realty.where(user_id: @current_user.id) %>
+  <% vehicles = Vehicle.where(user_id: @current_user.id) %>
+  <% realty_tax, vehicle_tax = 0, 0 %>
+  <% unless realties.length.zero?%>
+    <% realties.each do |object| %>
+      <% realty_tax += object.realty_tax %>
+    <% end %>
+  <% end %>
+  <% unless vehicles.length.zero?%>
+    <% vehicles.each do |object| %>
+      <% vehicle_tax += object.vehicle_tax %>
+    <% end %>
+  <% end %>
+  <% common_tax = @current_user.tax + realty_tax + vehicle_tax %>
+  <h5><%= t('common_sum') %> <%= common_tax %> ₽</h5>
+  <h5><%= t('paid_sum') %> <%= @current_user.tax_payed %> ₽</h5>
+  <% if @current_user.tax_payed <= common_tax %>
+    <h5><%= t('need_to_pay') %> <%= common_tax - @current_user.tax_payed %> ₽</h5>
+  <% else %>
+    <h5><%= t('overpaid') %> <%= @current_user.tax_payed - common_tax %> ₽</h5>
+  <% end %>
+</div>

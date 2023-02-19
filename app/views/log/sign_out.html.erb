@@ -1,0 +1,12 @@
+<div class="container m-2 mt-5 text-center" id="session-active">
+    <h2><%= t("ask_msg") %></h2>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active m-1">
+            <%= button_to t("home_btn"), root_path, method: :get, class: "btn btn-success" %>
+        </li>
+        <li class="nav-item active m-1">
+            <%= button_to t("quit_btn"), log_url, class: "btn btn-success" %>
+        </li>
+    </ul>
+</div>
+

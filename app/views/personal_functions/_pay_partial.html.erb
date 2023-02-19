@@ -1,0 +1,5 @@
+<% if @error.empty? %>
+  <h5><%= t('your_payment') %> <%= @sum %> ₽</h5>
+<% else %>
+  <%= @error[0] %>
+<% end %>

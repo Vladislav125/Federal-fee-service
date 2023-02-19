@@ -1,0 +1,20 @@
+.main_btn{
+  height: 60px; 
+  width: 320px;
+}
+.logo{
+  height: 60px
+}
+.block_img{
+  height: 120px
+}
+.log_button{
+  width: 200px
+}
+body {
+  background-image: url(/assets/img_1-b2553c6837e54745a391418e6b42226e2519ca0971bd4c6a871950dc6ded8dce.png);
+  background-size: 100%;
+}
+.color{
+   background-color: rgb(255, 236, 143);
+}

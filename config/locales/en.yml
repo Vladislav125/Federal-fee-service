@@ -1,0 +1,114 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   "true": "foo"
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+  lk_btn: "Personal account"
+  reg_btn: "Registration"
+  individuals: "Individuals"
+  interpreneurs: "Interpreneurs"
+  businessmen: "Organizations"
+  get_inn: "Get information about INN of individual"
+  clear_business: "Clear business"
+  login: "Login"
+  name: "User name"
+  password: "Password"
+  check_password: "Repeat password"
+  status: "Status"
+  ask_msg: "Are You sure You want to exit?"
+  home_btn: "Home"
+  quit_btn: "Exit"
+  get_inn_text: "Enter name of user whose INN You are interested in:"
+  find_btn: "Find"
+  get_inn_ans1: "There no individuals with such INN."
+  get_inn_ans2: "INN of individual "
+  clear_business_text: "Enter INN of interpreneur or organization to check the database"
+  clear_business_ans1: "There is no users with such INN. Be careful."
+  inn_text: "INN "
+  interp_text: "Individual interpreneur "
+  home: "Home"
+  income_btn: "Enter information about income"
+  realty_btn: "Enter information about realties"
+  vehicle_btn: "Enter information about vehicles"
+  payments_btn: "Get information about payments"
+  pay_btn: "Pay taxes"
+  possession_btn: "Get information about possessions"
+  put_income: "Enter your year income: "
+  add_btn: "Add"
+  value_saved: "Your information saved"
+  income_tax: "Income tax"
+  put_address: "Enter realty address"
+  put_square: "Enter realty square"
+  put_cost: "Enter realty cost"
+  realty_tax_value: "Tax on this realty"
+  put_plate: "Enter vehicle license plate"
+  put_model: "Enter vehicle model"
+  put_power: "Enter vehicle power"
+  vehicle_tax_value: "Tax on this vehicle"
+  need_to_pay: "You need to pay tax of "
+  sum_to_pay: "Enter sum to pay "
+  pay_tax: "Pay"
+  your_payment: "You paid"
+  common_sum: "Common taxes sum "
+  paid_sum: "Paid sum "
+  overpaid: "You have overpaid "
+  your_possession: "Information about your possession"
+  your_income: "Your income"
+  your_realty: "Your realties"
+  your_vehicle: "Yoyr vehicles"
+  t_address: "Address"
+  t_square: "Square"
+  t_cost: "Cost"
+  t_realty_tax: "Realty tax"
+  t_model: "Model"
+  t_plate: "License plate"
+  t_power: "Power"
+  t_vehicle_tax: "Vehicle tax"
+  t_create_user: "Create user"
+  t_input_login: "Input login"
+  t_already_exists: "User with such login already exists"
+  t_invalid_login: "Inappropriate login"
+  t_login_length: "Minimal login length - 5 symbols."
+  t_no_password: "No password entered"
+  t_password_length: "Minimal password length - 8 symbols"
+  t_invalid_name: "Inappropriate user name"
+  t_wrong_address: "Inappropriate address"
+  t_realty_exists: "Realty with such address id already registered"
+  t_wrong_square: "Inappropriate cost"
+  t_wrong_cost: "Inappropriate square"
+  t_vehicle_exists: "This license plate is already registered"
+  t_wrong_number: "Inappropriate license plate. It should be like: а000аа00."
+  t_wrong_model: "Inappropriate model"
+  t_wrong_power: "Inappropriate power"
+  t_tax_calc: "Power calculator"
+  t_input_power: "Input power"
+  t_count: "Count"
+  t_tax_vehicle: "Vehicle tax"

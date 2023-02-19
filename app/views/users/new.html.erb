@@ -1,0 +1,9 @@
+  <div class="container-fluid p-3 m-5 text-center m-lg-auto mr-aut" style="width: 800px">
+    <div class="container center-block border-3 mt-5 p-3" style="background-color: aqua">
+      <span>
+        <%= image_tag 'gosuslugi.png', class: "block_img d-inline-block align-top" %>
+      </span>
+      <h5><%= t("reg_btn") %></h5>
+      <%= render "form", user: @user %>
+    </div>
+  </div>

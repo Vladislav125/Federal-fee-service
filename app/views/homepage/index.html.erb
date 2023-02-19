@@ -1,0 +1,115 @@
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #6257d7;">
+    <%= link_to root_path, class: "nav-link navbar-brand mb-0 h1" do %>
+      <%= image_tag 'logo_nalog.png', class: 'logo' %>
+    <% end %>
+    <div class="container">
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" id="links-log">
+        <% unless User.find_by_id(session[:current_user_id]).nil? %>
+          <%= link_to t("quit_btn"), sign_out_url,  class: "btn btn-outline-success my-2 my-sm-0 text-dark" %>
+        <% else %>
+          <%= link_to new_url, class: "nav-link navbar-brand mb-0 h1" do %>
+            <button class="btn btn-outline-success my-2 my-sm-0 text-dark" type="submit"><%= t("reg_btn") %></button>
+          <% end %>
+        <% end %>
+      </li>
+      <li class="nav-item <%= ' active' if I18n.locale == :en %>">
+        <%= link_to 'En', {locale: :en}, class: "nav-link" %></li> 
+      <li class="nav-item <%= ' active' if I18n.locale == :ru %>">
+        <%= link_to 'Ru', {locale: :ru}, class: "nav-link" %></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <div class="container-fluid p-3 m-0">
+      <div class="row align-items-center p-0 mt-3">
+        <div class="col-4 container-fluid ">
+          <div class="row container p-0 m-4">
+            <div class="col">
+              <%= image_tag 'individual1.png', class: 'block_img d-inline-block align-top float-end' %>
+            </div>
+            <div class="col h5 text-muted text-uppercase">
+              <span class="block_name"><%= t("individuals") %></span>
+              <div class="p-3">
+                <% if session[:current_user_id] == nil || session[:current_user_id] == 0 %>
+                  <%= link_to sign_in_url do %>
+                    <button class="btn text-dark lk_btn" style="background-color: #ff8206;" type="submit"><%= t("lk_btn") %></button>
+                  <% end %>
+                <% else %>
+                  <%= link_to main_page_url do %>
+                    <button id="lk_button", class="btn text-dark lk_btn" style="background-color: #ff8206;" type="submit"><%= t("lk_btn") %></button>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 container-fluid p-0">
+          <div class="row container p-0">
+            <div class="col">
+              <%= image_tag 'businessman1.png', class: 'block_img d-inline-block align-top float-end' %>
+            </div>
+            <div class="col h5 text-muted text-uppercase">
+              <span class="block_name"><%= t("interpreneurs") %></span>
+              <div class="p-3">
+                <% if session[:current_user_id] == nil || session[:current_user_id] == 0 %>
+                  <%= link_to sign_in_url do %>
+                    <button class="btn text-dark lk_btn" style="background-color: #ff8206;" type="submit"><%= t("lk_btn") %></button>
+                  <% end %>
+                <% else %>
+                  <%= link_to main_page_url do %>
+                    <button class="btn text-dark lk_btn" style="background-color: #ff8206;" type="submit"><%= t("lk_btn") %></button>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 container-fluid p-0">
+          <div class="row container p-0">
+            <div class="col">
+              <%= image_tag 'interpreneur1.png', class: 'block_img d-inline-block align-top float-end' %>        
+            </div>
+            <div class="col h5 text-muted text-uppercase">
+              <span class="block_name"><%= t("businessmen") %></span>
+              <div class="p-3">
+                <% if session[:current_user_id] == nil || session[:current_user_id] == 0 %>
+                  <%= link_to sign_in_url do %>
+                    <button class="btn text-dark lk_btn" style="background-color: #ff8206;" type="submit"><%= t("lk_btn") %></button>
+                  <% end %>
+                <% else %>
+                  <%= link_to main_page_url do %>
+                    <button class="btn text-dark lk_btn" style="background-color: #ff8206;" type="submit"><%= t("lk_btn") %></button>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row align-items-center p-0 mt-3">
+        <div class="col-6 container-fluid">
+        </div>
+        <div class="col-6 container-fluid">
+          <div class="p-3 d-flex justify-content-center">
+            <%= link_to show_inn_url do %>
+              <button id="get_inn_btn" class="btn btn-warning main_btn" type="submit"><%= t("get_inn") %></button>
+            <% end %>
+          </div>
+          <div class="p-3 d-flex justify-content-center">
+            <%= link_to clear_business_url do %>
+              <button id="clear_business_btn" class="btn btn-warning main_btn" type="submit"><%= t("clear_business") %></button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>

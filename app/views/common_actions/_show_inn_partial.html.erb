@@ -1,0 +1,5 @@
+<% if @user_from_db == nil %>
+  <h3><%= t("get_inn_ans1") %></h3>
+<% else %>
+  <h5><%= t("get_inn_ans2") %> <%= @user_from_db.user_name %>: <%= @user_from_db.inn %></h5>
+<% end %>

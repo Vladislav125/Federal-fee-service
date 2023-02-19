@@ -1,0 +1,8 @@
+<% if @error.empty? %>
+  <h5><%= t('value_saved') %></h5>
+  <h5><%= t('vehicle_tax_value') %> <%= @new_vehicle.vehicle_tax %></h5>
+<% else %>
+  <% @error.each do |msg| %>
+    <%= msg %><br>
+  <% end %>
+<% end %>

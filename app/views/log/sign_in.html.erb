@@ -1,0 +1,28 @@
+  <div class="container-fluid p-3 m-5 text-center m-lg-auto mr-aut" style="width: 600px">
+    <div class="container center-block border-3 mt-5 p-3 table-danger">
+      <span>
+        <%= image_tag 'gosuslugi.png', class: "block_img d-inline-block align-top" %>
+      </span>
+      <%= form_with url: log_url, method: :post do |form| %>
+        <div class="form-group row m-2">
+              <%= form.label :login, t("login"), class: "col-sm-2 col-form-label" %>
+              <div class="col-sm-10">
+                <%= form.text_field :login, class: "form-control", placeholder: t("login") %>
+              </div>
+        </div>
+        <div class="form-group row m-2">
+              <%= form.label :password, t("password"), class: "col-sm-2 col-form-label" %>
+              <div class="col-sm-10">
+                <%= form.password_field :password, class: "form-control", placeholder: t("password") %>
+              </div>
+        </div>
+        <div id="msg"></div>
+        <div class="m-2">
+          <%= form.submit "Log In", id: 'auth_btn', class: 'btn btn-warning log_button' %>
+        </div>
+        <div>
+          <%= link_to t("reg_btn"), new_url, class: "link" %>
+        </div>
+      <% end %>
+    </div>
+  </div>

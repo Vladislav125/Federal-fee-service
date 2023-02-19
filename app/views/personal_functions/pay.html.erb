@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #6257d7;">
+  <%= link_to pay_url, class: "nav-link navbar-brand mb-0 h1" do %>
+    <%= image_tag 'logo_nalog.png', class: 'logo' %>
+  <% end %>
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active" id="links-log">
+      <%= link_to root_path, class: "nav-link navbar-brand mb-0 h1" do %>
+        <button class="btn btn-outline-success my-2 my-sm-0 text-dark" type="submit"><%= t('home') %></button>
+      <% end %>
+    </li>
+    <li class="nav-item active" id="links-log">
+      <%= link_to main_page_url, class: "nav-link navbar-brand mb-0 h1" do %>
+        <button class="btn btn-outline-success my-2 my-sm-0 text-dark" type="submit"><%= t('lk_btn') %></button>
+      <% end %>
+    </li>
+  </ul>
+</nav>
+<div id='pay_container' class="container m-3">
+  <%= form_with url: pay_output_url, method: :post do |form| %>
+    <h5><%= t('need_to_pay') %> <%= @tax_to_pay %> рублей</h5><br>
+    <%= form.label t('sum_to_pay'), :class => 'label-form h5' %><br>
+    <%= form.text_field :sum %><br/><br/>
+    <%= form.submit t('pay_tax'), id: "pay_button", class: 'btn btn-warning' %>
+  <% end %>
+</div>

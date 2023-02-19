@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #6257d7;">
+  <a class="" href="/personal_functions/">
+  <%= link_to posession_info_url, class: "nav-link navbar-brand mb-0 h1" do %>
+    <%= image_tag 'logo_nalog.png', class: 'logo' %>
+  <% end %>
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active" id="links-log">
+      <%= link_to root_path, class: "nav-link navbar-brand mb-0 h1" do %>
+        <button class="btn btn-outline-success my-2 my-sm-0 text-dark" type="submit"><%= t('home') %></button>
+      <% end %>
+    </li>
+    <li class="nav-item active" id="links-log">
+      <%= link_to main_page_url, class: "nav-link navbar-brand mb-0 h1" do %>
+        <button class="btn btn-outline-success my-2 my-sm-0 text-dark" type="submit"><%= t('lk_btn') %></button>
+      <% end %>
+    </li>
+  </ul>
+</nav>
+<div class="container m-3">
+  <h5><%= t('your_possession') %></h5><br>
+  <h6><%= t('your_income') %> <%= @current_user.income %> ₽</h6>
+  <h6><%= t('income_tax') %> <%= @current_user.tax %> ₽</h6>
+  <% realties = Realty.where(user_id: @current_user.id) %>
+  <% vehicles = Vehicle.where(user_id: @current_user.id) %>
+  <% unless realties.length.zero?%>
+    <table border="2" id="show-table" class="table text-dark">
+      <tr class="table-primary">
+        <th colspan='4'><%= t('your_realty') %></th>
+      </tr>
+      <tr class="table-primary">
+        <th><%= t('t_address') %></th>
+        <th><%= t('t_square') %></th>
+        <th><%= t('t_cost') %></th>
+        <th><%= t('t_realty_tax') %></th>
+      </tr>
+      <% realties.each do |object| %>
+        <tr class="table-secondary">
+          <td><%= object.address %></td>
+          <td><%= object.square %></td>
+          <td><%= object.cost %></td>
+          <td><%= object.realty_tax %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>  
+  <% unless vehicles.length.zero?%>
+    <table border='2' id="show-table" class="table text-dark">
+      <tr class="table-primary align-items-center">
+        <th colspan='4'><%= t('your_vehicle') %></th>
+      </tr>
+      <tr class="table-primary">
+        <th><%= t('t_model') %></th>
+        <th><%= t('t_plate') %></th>
+        <th><%= t('t_power') %></th>
+        <th><%= t('t_vehicle_tax') %></th>
+      </tr>
+      <% vehicles.each do |object| %>
+        <tr class="table-secondary">
+          <td><%= object.model %></td>
+          <td><%= object.license_plate %></td>
+          <td><%= object.power %></td>
+          <td><%= object.vehicle_tax %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>  
+</div>

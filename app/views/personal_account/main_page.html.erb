@@ -1,0 +1,76 @@
+ <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #6257d7;">
+  <%= link_to main_page_url, class: "nav-link navbar-brand mb-0 h1" do %>
+    <%= image_tag 'logo_nalog.png', class: 'logo' %>
+  <% end %>
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ul class="navbar-nav mr-auto">
+  <li class="nav-item active" id="links-log">
+    <%= link_to root_path, class: "nav-link navbar-brand mb-0 h1" do %>
+      <button class="btn btn-outline-success my-2 my-sm-0 text-dark" type="submit"><%= t('home') %></button>
+    <% end %>
+  </li>
+  <li class="nav-item <%= 'active' if I18n.locale == :en %>">
+    <%= link_to 'En', root_path(locale: :en), class: "nav-link" %></li> 
+  <li class="nav-item <%= 'active' if I18n.locale == :ru %>">
+    <%= link_to 'Ru', root_path(locale: :ru), class: "nav-link" %></li>
+  </ul>
+</nav>
+<main>
+  <div class="container-fluid p-3 m-0">
+    <div class="row container p-0">
+      <div class="col-4 container-fluid">
+        <div class="p-3 d-flex justify-content-center">
+          <%= link_to add_income_url do %>
+            <button id="add_income" class="btn btn-warning main_btn" type="submit"><%= t('income_btn') %></button>
+          <% end %>
+        </div>
+        <div class="p-3 d-flex justify-content-center">
+          <%= link_to add_realty_url do %>
+            <button id="add_realty" class="btn btn-warning main_btn" type="submit"><%= t('realty_btn') %></button>
+          <% end %>
+        </div>
+        <div class="p-3 d-flex justify-content-center">
+          <%= link_to add_vehicle_url do %>
+            <button id="add_vehicle" class="btn btn-warning main_btn" type="submit"><%= t('vehicle_btn') %></button>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-4 container-fluid">
+        <div class="p-3 d-flex justify-content-center">
+          <%= link_to payments_info_url do %>
+            <button id="payments" class="btn btn-warning main_btn" type="submit"><%= t('payments_btn') %></button>
+          <% end %>
+        </div>
+        <div class="p-3 d-flex justify-content-center">
+          <%= link_to pay_url do %>
+            <button id="pay" class="btn btn-warning main_btn" type="submit"><%= t('pay_btn') %></button>
+          <% end %>
+        </div>
+        <div class="p-3 d-flex justify-content-center">
+          <%= link_to posession_info_url do %>
+            <button id="possession_info" class="btn btn-warning main_btn" type="submit"><%= t('possession_btn') %></button>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-1 container-fluid align-items-center">
+      </div>
+      <div class="col-3 container-fluid align-items-center">
+        <div class="container ml-5 mt-4 m-3 pt-3 border border-success rounded table-danger">
+          <% user = User.find_by(id: session[:current_user_id]) %>
+          <% unless user.nil? %>
+            <div style="text-align: center;"><h5><%= user.user_name %></h5></div><br>
+            <div><%= t('login') %>: <%= user.login %></div><br>
+            <div><%= t('inn_text') %>: <%= user.inn %></div><br>
+          <% end %>  
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,6 @@
+<% if @error.empty? %>
+  <h5><%= t('value_saved') %></h5>
+  <h5><%= t('income_tax') %>: <%= (@income*0.13).round(2) %></h5>
+<% else %>
+  @error
+<% end %>

@@ -1,0 +1,36 @@
+.main_btn{
+  height: 60px; 
+  width: 320px;
+}
+.logo{
+  height: 60px
+}
+.block_img{
+  height: 130px
+}
+.log_button{
+  width: 200px
+}
+body {
+  background-image: url(/assets/desktop-5657db34fd63491a6b830ad6f593fa4585d81da65bbb3bd27114e4f4b3ddf73a.jpg);
+  background-size: 100%;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+
+ */
+ body {
+  background-image: url(/assets/desktop-5657db34fd63491a6b830ad6f593fa4585d81da65bbb3bd27114e4f4b3ddf73a.jpg);
+}
